@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- ============================================================
+       Eric Leon Nomberto · Landing
+       Analista de datos · Banca & Finanzas
+       Estructura:
+         css/tokens.css      → variables de diseño (colores, tipografía, espacios)
+         css/base.css        → reset + estilos globales
+         css/components.css  → piezas reutilizables (botones, tarjetas, etiquetas)
+         css/sections.css    → estilos por sección de la página
+         css/animations.css  → keyframes y estados de aparición
+         js/config.js        → datos editables (enlaces, textos dinámicos)
+         js/modules/*.js     → un módulo por comportamiento
+         js/main.js          → punto de entrada: inicializa los módulos
+       ============================================================ -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eric Leon Nomberto · Datos claros, mejores decisiones</title>
+  <meta name="description" content="Eric Leon Nomberto, analista de datos especializado en banca y finanzas. Datos claros, mejores decisiones." />
+
+  <!-- Open Graph: cómo se ve el enlace al compartirlo -->
+  <meta property="og:title" content="Eric Leon Nomberto · Datos claros, mejores decisiones" />
+  <meta property="og:description" content="Analista de datos especializado en banca y finanzas." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0A0F1C" />
+
+  <!-- Favicon inline: monograma "E" sobre un punto de datos -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0F1C'/%3E%3Cpath d='M14 46 L28 32 L38 38 L52 18' stroke='%2346E3A0' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='52' cy='18' r='5' fill='%2346E3A0'/%3E%3C/svg%3E" />
+
+  <!-- Tipografías: Fraunces (titulares con carácter), Manrope (texto), JetBrains Mono (cifras/datos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Estilos (orden importa: tokens → base → componentes → secciones → animaciones) -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+
+<body>
+  <!-- Enlace de accesibilidad para saltar al contenido -->
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <!-- ============================== NAV ============================== -->
+  <header class="nav" data-nav>
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="Eric Leon Nomberto, inicio">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M5 24 L13 16 L19 20 L27 8" /><circle cx="27" cy="8" r="2.6" /></svg>
+        </span>
+        <span class="brand__name">Eric Leon Nomberto</span>
+      </a>
+      <nav class="nav__links" aria-label="Secciones">
+        <a href="#problema">El problema</a>
+        <a href="#servicios">Qué hago</a>
+        <a href="#proceso">Cómo trabajo</a>
+        <a href="sobre-mi.html">Sobre mí</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <a class="btn btn--sm btn--primary" data-portfolio-link href="#" target="_blank" rel="noopener">
+        Ver mis proyectos <span class="btn__arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================== HERO ==============================
+         Gancho: el gráfico empieza como ruido y se ordena en una tendencia clara.
+         Es el slogan convertido en imagen. -->
+    <section class="hero" id="top">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow reveal">
+            <span class="dot dot--live" aria-hidden="true"></span>
+            Analista de datos · Banca &amp; Finanzas
+          </p>
+
+          <h1 class="hero__title reveal" data-delay="1">
+            Datos claros,<br />
+            <em>mejores decisiones.</em>
+          </h1>
+
+          <p class="hero__lead reveal" data-delay="2">
+            Soy <strong>Eric Leon Nomberto</strong>. Convierto el ruido de transacciones,
+            créditos y carteras en respuestas que un comité puede aprobar el mismo día.
+          </p>
+
+          <div class="hero__actions reveal" data-delay="3">
+            <a class="btn btn--primary btn--lg" data-portfolio-link href="#" target="_blank" rel="noopener">
+              Ver mis proyectos <span class="btn__arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="#proceso">Cómo trabajo</a>
+          </div>
+        </div>
+
+        <!-- Panel del gráfico "ruido → claridad" -->
+        <figure class="hero__chart card reveal" data-delay="2" aria-label="Animación: datos desordenados que se transforman en una tendencia clara">
+          <header class="chart-head">
+            <span class="chart-head__label mono">cartera_creditos.csv</span>
+            <span class="chart-head__state mono" data-chart-state>procesando…</span>
+          </header>
+          <canvas class="hero__canvas" data-hero-chart></canvas>
+          <figcaption class="chart-foot">
+            <span class="chart-foot__legend"><i class="swatch swatch--noise"></i>Ruido</span>
+            <span class="chart-foot__legend"><i class="swatch swatch--signal"></i>Decisión</span>
+            <button class="chart-foot__replay mono" type="button" data-chart-replay>↻ repetir</button>
+          </figcaption>
+        </figure>
+      </div>
+
+      <a class="scroll-cue" href="#problema" aria-label="Bajar a la siguiente sección">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============================== TICKER ==============================
+         Cinta continua con el vocabulario del sector: posiciona el nicho en segundos.
+         Los términos se cargan desde js/config.js -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track" data-ticker></div>
+    </div>
+
+    <!-- ============================== PROBLEMA ============================== -->
+    <section class="section problem" id="problema">
+      <div class="container">
+        <p class="eyebrow reveal">01 — El problema</p>
+        <h2 class="statement reveal" data-delay="1">
+          Tu entidad no tiene un problema de datos.
+          <span class="statement__accent">Tiene un problema de claridad.</span>
+        </h2>
+
+        <div class="pain-grid">
+          <article class="pain reveal" data-delay="1">
+            <span class="pain__num mono">a.</span>
+            <h3>Informes que nadie lee</h3>
+            <p>Cuarenta pestañas de Excel y ninguna respuesta a la pregunta que importa.</p>
+          </article>
+          <article class="pain reveal" data-delay="2">
+            <span class="pain__num mono">b.</span>
+            <h3>Riesgo que llega tarde</h3>
+            <p>La morosidad se detecta cuando ya está en el balance, no cuando aún se puede evitar.</p>
+          </article>
+          <article class="pain reveal" data-delay="3">
+            <span class="pain__num mono">c.</span>
+            <h3>Decisiones por intuición</h3>
+            <p>Hay datos de sobra, pero el comité sigue decidiendo con la sensación del momento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== SERVICIOS ============================== -->
+    <section class="section services" id="servicios">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal">02 — Qué hago</p>
+          <h2 class="section-title reveal" data-delay="1">Análisis pensado para <em>el negocio financiero</em>.</h2>
+        </div>
+
+        <!-- Las tarjetas se generan desde js/config.js (services) para escalar fácilmente -->
+        <div class="service-grid" data-services></div>
+      </div>
+    </section>
+
+    <!-- ============================== PROCESO ============================== -->
+    <section class="section process" id="proceso">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal">03 — Cómo trabajo</p>
+          <h2 class="section-title reveal" data-delay="1">De la pregunta a la decisión, <em>en cuatro pasos</em>.</h2>
+        </div>
+
+        <ol class="steps" data-steps>
+          <li class="step reveal" data-delay="1">
+            <span class="step__num mono">01</span>
+            <h3>Pregunta</h3>
+            <p>Empiezo por la decisión que hay que tomar, no por la base de datos.</p>
+          </li>
+          <li class="step reveal" data-delay="2">
+            <span class="step__num mono">02</span>
+            <h3>Limpieza</h3>
+            <p>Depuro, cruzo y valido. Un dato dudoso no llega a ninguna diapositiva.</p>
+          </li>
+          <li class="step reveal" data-delay="3">
+            <span class="step__num mono">03</span>
+            <h3>Análisis</h3>
+            <p>Modelos y métricas proporcionados al problema. Sin complejidad decorativa.</p>
+          </li>
+          <li class="step reveal" data-delay="4">
+            <span class="step__num mono">04</span>
+            <h3>Decisión</h3>
+            <p>Una conclusión, su evidencia y el siguiente paso. Lista para el comité.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================== NOMBRE (momento de marca) ==============================
+         Sección pensada para fijar el nombre en la memoria, aunque no haya clic. -->
+    <section class="signature" aria-label="Eric Leon Nomberto">
+      <div class="container">
+        <p class="signature__kicker reveal">Recuerda este nombre la próxima vez que tus datos no te digan nada.</p>
+        <p class="signature__name" data-signature>
+          <span class="signature__line">Eric</span>
+          <span class="signature__line">Leon</span>
+          <span class="signature__line signature__line--accent">Nomberto<span class="signature__dot">.</span></span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================== CTA FINAL ============================== -->
+    <section class="section cta" id="contacto">
+      <div class="container cta__inner">
+        <p class="eyebrow reveal">04 — Los resultados</p>
+        <h2 class="cta__title reveal" data-delay="1">
+          Los proyectos hablan<br /><em>con más claridad que yo.</em>
+        </h2>
+        <p class="cta__lead reveal" data-delay="2">
+          Casos reales de análisis bancario y financiero: el problema, el método y lo que cambió.
+        </p>
+        <a class="btn btn--primary btn--xl reveal" data-delay="3" data-portfolio-link href="#" target="_blank" rel="noopener">
+          Ver mis proyectos <span class="btn__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__name">Eric Leon Nomberto</span>
+      <span class="footer__slogan mono">Datos claros, mejores decisiones.</span>
+      <!-- Enlaces a páginas y redes: se generan desde js/config.js (pages, social).
+           Imprescindible en móvil, donde el menú superior se oculta. -->
+      <nav class="footer__links" aria-label="Pie" data-footer-links></nav>
+      <span class="footer__year mono">© <span data-year></span></span>
+    </div>
+  </footer>
+
+  <!-- Scripts: sin dependencias externas, funcionan abriendo el archivo directamente.
+       Orden: config → módulos → main -->
+  <script src="js/config.js"></script>
+  <script src="js/modules/content.js"></script>
+  <script src="js/modules/hero-chart.js"></script>
+  <script src="js/modules/reveal.js"></script>
+  <script src="js/modules/nav.js"></script>
+  <script src="js/modules/effects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

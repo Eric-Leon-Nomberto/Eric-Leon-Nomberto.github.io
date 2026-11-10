@@ -1,0 +1,110 @@
+/* ==========================================================================
+   COMPONENTES REUTILIZABLES
+   ========================================================================== */
+
+/* ---------- Etiqueta superior (eyebrow) ---------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-family: var(--f-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-text-soft);
+}
+
+/* ---------- Punto de estado ---------- */
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--c-accent);
+}
+.dot--live { box-shadow: 0 0 0 0 var(--c-accent); animation: pulse 2.4s infinite; }
+
+/* ---------- Botones ---------- */
+.btn {
+  --btn-pad-y: 0.85rem;
+  --btn-pad-x: 1.4rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  padding: var(--btn-pad-y) var(--btn-pad-x);
+  border-radius: var(--r-pill);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  line-height: 1;
+  white-space: nowrap;
+  transition: transform var(--t-fast) var(--ease-out),
+              background-color var(--t-fast) var(--ease-out),
+              border-color var(--t-fast) var(--ease-out),
+              box-shadow var(--t-med) var(--ease-out);
+}
+.btn:active { transform: translateY(1px) scale(0.98); }
+
+.btn__arrow { display: inline-block; transition: transform var(--t-fast) var(--ease-out); }
+.btn:hover .btn__arrow { transform: translateX(4px); }
+
+.btn--primary {
+  background: var(--c-accent);
+  color: var(--c-accent-ink);
+  box-shadow: 0 0 0 0 rgba(70, 227, 160, 0);
+}
+.btn--primary:hover { box-shadow: 0 10px 40px -10px rgba(70, 227, 160, 0.6); }
+
+.btn--ghost {
+  border: 1px solid var(--c-line-strong);
+  color: var(--c-text);
+}
+.btn--ghost:hover { border-color: var(--c-text-soft); background: rgba(255, 255, 255, 0.03); }
+
+.btn--sm { --btn-pad-y: 0.6rem; --btn-pad-x: 1rem; font-size: var(--fs-xs); }
+.btn--lg { --btn-pad-y: 1rem;   --btn-pad-x: 1.6rem; font-size: var(--fs-base); }
+.btn--xl { --btn-pad-y: 1.25rem; --btn-pad-x: 2.2rem; font-size: var(--fs-lg); }
+
+/* ---------- Tarjeta base ---------- */
+.card {
+  background: linear-gradient(180deg, var(--c-surface) 0%, var(--c-bg-alt) 100%);
+  border: 1px solid var(--c-line);
+  border-radius: var(--r-lg);
+}
+
+/* ---------- Muestras de leyenda ---------- */
+.swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.swatch--noise  { background: var(--c-noise); }
+.swatch--signal { background: var(--c-accent); }
+
+/* ---------- Marca (logo) ---------- */
+.brand { display: inline-flex; align-items: center; gap: var(--s-3); }
+.brand__mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-line-strong);
+}
+.brand__mark svg { width: 20px; height: 20px; }
+.brand__mark path {
+  fill: none;
+  stroke: var(--c-accent);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.brand__mark circle { fill: var(--c-accent); }
+.brand__name {
+  font-family: var(--f-display);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}

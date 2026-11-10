@@ -1,0 +1,9 @@
+# Copias de seguridad locales: no se publican
+_versiones/
+
+# Configuración local del editor / Claude
+.claude/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db

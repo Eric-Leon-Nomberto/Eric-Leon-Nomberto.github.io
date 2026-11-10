@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- Página: listado de proyectos.
+       Las tarjetas se generan desde js/data/projects.js (no editar aquí). -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyectos · Eric Leon Nomberto</title>
+  <meta name="description" content="Proyectos de análisis de datos en banca y finanzas de Eric Leon Nomberto: churn, segmentación de clientes y más." />
+  <meta name="theme-color" content="#0A0F1C" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0F1C'/%3E%3Cpath d='M14 46 L28 32 L38 38 L52 18' stroke='%2346E3A0' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='52' cy='18' r='5' fill='%2346E3A0'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..800&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+</head>
+
+<body class="page" data-page="proyectos">
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <header class="site-header" data-site-header></header>
+
+  <main id="main">
+    <header class="container narrow page-head">
+      <p class="eyebrow">Proyectos</p>
+      <h1 class="page-title">Casos de análisis, <em>de la pregunta a la decisión</em>.</h1>
+      <p class="page-lead">
+        Cada proyecto parte de una pregunta de negocio y termina en una recomendación.
+        Dentro encontrarás los datos, el método y los resultados.
+      </p>
+    </header>
+
+    <div class="container narrow">
+      <div class="project-list" data-project-list></div>
+    </div>
+  </main>
+
+  <footer class="footer" data-site-footer></footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/data/projects.js"></script>
+  <script src="js/modules/layout.js"></script>
+  <script src="js/modules/projects.js"></script>
+  <script src="js/pages.js"></script>
+</body>
+</html>

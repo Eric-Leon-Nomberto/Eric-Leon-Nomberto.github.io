@@ -1,0 +1,68 @@
+/* ==========================================================================
+   TOKENS DE DISEÑO
+   Cambia aquí colores, tipografías y espacios: el resto del CSS los consume.
+   ========================================================================== */
+
+:root {
+  /* --- Color: fondo tinta azul profundo (banca, confianza) --- */
+  --c-bg:          #0A0F1C;
+  --c-bg-alt:      #0E1526;
+  --c-surface:     #121A2E;
+  --c-surface-2:   #18223A;
+  --c-line:        rgba(255, 255, 255, 0.08);
+  --c-line-strong: rgba(255, 255, 255, 0.16);
+
+  /* --- Color: texto --- */
+  --c-text:        #EEF2F8;
+  --c-text-soft:   #A8B3C7;
+  --c-text-mute:   #6B7790;
+
+  /* --- Color: acento único (verde "señal": crecimiento, claridad) --- */
+  --c-accent:      #46E3A0;
+  --c-accent-ink:  #04150D;   /* texto sobre el acento */
+  --c-accent-soft: rgba(70, 227, 160, 0.12);
+
+  /* --- Color: ruido (dato sin procesar) --- */
+  --c-noise:       #F0A85A;
+
+  /* --- Tipografía --- */
+  --f-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --f-body:    "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:    "JetBrains Mono", ui-monospace, Menlo, monospace;
+
+  /* Escala fluida: min, preferido, máx */
+  --fs-xs:   0.78rem;
+  --fs-sm:   0.9rem;
+  --fs-base: 1.0625rem;
+  --fs-lg:   clamp(1.125rem, 1rem + 0.4vw, 1.3rem);
+  --fs-xl:   clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  --fs-2xl:  clamp(2.1rem, 1.5rem + 2.4vw, 3.4rem);
+  --fs-3xl:  clamp(2.6rem, 1.6rem + 4.2vw, 5.4rem);
+  --fs-mega: clamp(3.6rem, 1rem + 13vw, 13rem);
+
+  /* --- Espaciado --- */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4.5rem;
+  --s-9: clamp(5rem, 3rem + 7vw, 9rem);
+
+  /* --- Layout --- */
+  --container: 1200px;
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  --nav-h: 68px;
+
+  /* --- Forma y movimiento --- */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-pill: 999px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast: 180ms;
+  --t-med: 420ms;
+  --t-slow: 900ms;
+}
